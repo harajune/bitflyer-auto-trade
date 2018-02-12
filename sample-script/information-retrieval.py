@@ -29,15 +29,15 @@ def print_market():
     print(r.json())
 
 def print_board():
-    r = requests.get(API_URL + "/v1/getboard")
+    r = requests.get(API_URL + "/v1/getboard", params={"product_code": "FX_BTC_JPY"})
     print(r.json())
 
 def print_ticker():
-    r = requests.get(API_URL + "/v1/getticker")
+    r = requests.get(API_URL + "/v1/getticker", params={"product_code": "FX_BTC_JPY"})
     print(r.json())
     
 def print_execution():
-    r = requests.get(API_URL + "/v1/getexecutions")
+    r = requests.get(API_URL + "/v1/getexecutions", params={"product_code": "FX_BTC_JPY"})
     print(r.json())
 
 def sign(timestamp, method, path, body=None):
